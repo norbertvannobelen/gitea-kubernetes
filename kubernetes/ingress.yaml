@@ -1,0 +1,11 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: gitea
+  namespace: gitea
+spec:
+  tls:
+  - secretName: tls-secret
+  backend:
+    serviceName: gitea
+    servicePort: 3000
